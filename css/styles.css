@@ -51,6 +51,8 @@ h2 {
 
 h3 {
   font-size: 35px;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
 }
 
 h4 {
@@ -71,6 +73,25 @@ a {
   text-decoration: none;
 }
 
+.card {
+  width: 270px;
+  background-color: #fafafa;
+  border-radius: 9px;
+  padding-bottom: 30px;
+}
+
+.card-title {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.card-btn {
+  margin-top: 30px;
+}
+
 .btn {
   padding: 15px 45px;
   background-color: #f1cdb3;
@@ -82,6 +103,45 @@ a {
 
 .btn:hover {
   background-color: #fddcc4;
+}
+
+.btn-outline {
+  padding: 15px 45px;
+  background-color: inherit;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 2px solid #f1cdb3;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+}
+
+.arrow-btn {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #f1cdb3;
+  transition: 0.3s;
+  color: #292929;
+}
+
+.arrow-btn:hover {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+}
+
+.arrow-btn:disabled {
+  pointer-events: none;
+  color: #cdcdcd;
+  border-color: #cdcdcd;
 }
 
 .header {
@@ -135,6 +195,7 @@ a {
 
 .start-screen {
   height: 908px;
+  overflow: hidden;
   padding-top: 180px;
   background: url(../img/start-screen-gradient-background.jpg);
   background-repeat: no-repeat;
@@ -162,4 +223,59 @@ a {
 
 .start-screen__btn {
   margin-top: 42px;
+}
+
+.about {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.about .container {
+  display: flex;
+  align-items: center;
+}
+
+.about__img {
+  flex: 1;
+}
+
+.about__img img {
+  width: 300px;
+  margin-left: 175px;
+}
+
+.about__content {
+  flex: 1;
+}
+
+.about__content-heading {
+  color: #545454;
+}
+
+.about__content-subheading {
+  width: 430px;
+  margin-top: 25px;
+  color: #4c4c4c;
+}
+
+.pets {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+.pets__heading {
+  color: #545454;
+}
+
+.pets__slider {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pets__btn {
+  margin: 60px auto 0;
 }
