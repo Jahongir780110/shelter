@@ -104,21 +104,21 @@
             <button class="btn-round">
               <i class="fa-solid fa-arrow-left-long"></i>
             </button>
-            <div class="card">
+            <div class="card" data-id="1">
               <div class="card-img">
                 <img src="./img/pets-katrine.png" alt="Katrine cat image" />
               </div>
               <p class="card-title">Katrine</p>
               <button class="btn-outline card-btn">Learn more</button>
             </div>
-            <div class="card">
+            <div class="card" data-id="2">
               <div class="card-img">
                 <img src="./img/pets-jennifer.png" alt="Jennifer dog image" />
               </div>
               <p class="card-title">Jennifer</p>
               <button class="btn-outline card-btn">Learn more</button>
             </div>
-            <div class="card">
+            <div class="card" data-id="3">
               <div class="card-img">
                 <img src="./img/pets-woody.png" alt="Woody dog image" />
               </div>
@@ -324,27 +324,31 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal__image">
-          <img src="./img/pets-jennifer.png" alt="puppy image" />
+          <img src="" alt="" />
         </div>
         <div class="modal__content">
-          <h3 class="modal__heading">Jennifer</h3>
-          <h4 class="modal__subheading">Dog - Labrador</h4>
-          <h5 class="modal__text">
-            Jennifer is a sweet 2 months old Labrador that is patiently waiting
-            to find a new forever home. This girl really enjoys being able to go
-            outside to run and play, but won't hesitate to play up a storm in
-            the house if she has all of her favorite toys.
-          </h5>
+          <h3 class="modal__heading"></h3>
+          <h4 class="modal__subheading"></h4>
+          <h5 class="modal__text"></h5>
           <ul class="modal__list">
-            <li class="modal__list-item"><strong>Age:</strong> 2 months</li>
             <li class="modal__list-item">
-              <strong>Inoculations:</strong> none
+              <strong>Age:</strong> <span class="pet-age"></span>
             </li>
-            <li class="modal__list-item"><strong>Diseases:</strong> none</li>
-            <li class="modal__list-item"><strong>Parasites:</strong> none</li>
+            <li class="modal__list-item">
+              <strong>Inoculations:</strong>
+              <span class="pet-inoculations"></span>
+            </li>
+            <li class="modal__list-item">
+              <strong>Diseases:</strong> <span class="pet-diseases"></span>
+            </li>
+            <li class="modal__list-item">
+              <strong>Parasites:</strong> <span class="pet-parasites"></span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </body>
+
+  <script src="./js/main.js"></script>
 </html>
