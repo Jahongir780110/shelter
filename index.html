@@ -27,16 +27,16 @@
         <nav class="header__navbar">
           <ul class="header__navbar-list">
             <li class="header__navbar-item active">
-              <a class="nav-link" href="#">About the shelter</a>
+              <a class="nav-link" href="/">About the shelter</a>
             </li>
             <li class="header__navbar-item">
-              <a class="nav-link" href="#">Our pets</a>
+              <a class="nav-link" href="./pets.html" target="blank">Our pets</a>
             </li>
             <li class="header__navbar-item">
-              <a class="sitenav-link" href="#">Help the shelter</a>
+              <a class="sitenav-link" href="#help">Help the shelter</a>
             </li>
             <li class="header__navbar-item">
-              <a class="sitenav-link" href="#">Contacts</a>
+              <a class="sitenav-link" href="#contacts">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -56,7 +56,9 @@
               extremely wide and open heart. He or she will love you more than
               anybody else in the world, you will see!
             </p>
-            <button class="btn start-screen__btn">Make a friend</button>
+            <a href="#pets">
+              <button class="btn start-screen__btn">Make a friend</button>
+            </a>
           </div>
           <div class="start-screen__img">
             <img src="./img/start-screen-puppy.png" alt="Start screen puppy" />
@@ -64,7 +66,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section id="about" class="about">
         <div class="container">
           <div class="about__img">
             <img src="./img/about-pets.png" alt="About section pets" />
@@ -92,14 +94,14 @@
         </div>
       </section>
 
-      <section class="pets">
+      <section id="pets" class="pets">
         <div class="container">
           <h3 class="pets__heading">
             Our friends who <br />
             are looking for a house
           </h3>
           <div class="pets__slider">
-            <button class="arrow-btn" disabled>
+            <button class="btn-round">
               <i class="fa-solid fa-arrow-left-long"></i>
             </button>
             <div class="card">
@@ -123,15 +125,17 @@
               <p class="card-title">Woody</p>
               <button class="btn-outline card-btn">Learn more</button>
             </div>
-            <button class="arrow-btn">
+            <button class="btn-round">
               <i class="fa-solid fa-arrow-right-long"></i>
             </button>
           </div>
-          <button class="btn pets__btn">Get to know the rest</button>
+          <a href="./pets.html" target="blank">
+            <button class="btn pets__btn">Get to know the rest</button>
+          </a>
         </div>
       </section>
 
-      <section class="help">
+      <section id="help" class="help">
         <div class="container">
           <h3 class="help__heading">
             How you can help <br />
@@ -214,7 +218,7 @@
         </div>
       </section>
 
-      <section class="donation">
+      <section id="donation" class="donation">
         <div class="donation__container">
           <div class="donation__dog">
             <img src="./img/donation-dog.png" alt="dog image" />
@@ -227,14 +231,16 @@
             <h5 class="donation__content-subheading">
               Name of the bank / Type of bank account
             </h5>
-            <button class="btn donation__content-btn">
-              <img
-                src="./icons/credit-card.svg"
-                alt="credit card icon"
-                class="credit-card-image"
-              />
-              <span class="credit-card-number">8380 2880 8028 8791 7135</span>
-            </button>
+            <a href="/">
+              <button class="btn donation__content-btn">
+                <img
+                  src="./icons/credit-card.svg"
+                  alt="credit card icon"
+                  class="credit-card-image"
+                />
+                <span class="credit-card-number">8380 2880 8028 8791 7135</span>
+              </button>
+            </a>
             <p class="doncation__content-info">
               Legal information and lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
@@ -253,7 +259,7 @@
             For questions <br />
             and suggestions
           </h3>
-          <a href="#" class="footer__contacts-contact">
+          <a href="mailto:email@shelter.com" class="footer__contacts-contact">
             <img
               src="./icons/icon-email.svg"
               alt="email icon"
@@ -261,7 +267,7 @@
             />
             <h4 class="footer__contacts-text">email@shelter.com</h4>
           </a>
-          <a href="#" class="footer__contacts-contact">
+          <a href="tel:+136745677554" class="footer__contacts-contact">
             <img
               src="./icons/icon-phone.svg"
               alt="telephone icon"
@@ -271,12 +277,16 @@
           </a>
         </div>
 
-        <div class="footer__locations">
+        <div id="contacts" class="footer__locations">
           <h3 class="footer__locations-title">
             We are waiting <br />
             for your visit
           </h3>
-          <a href="#" class="footer__locations-location">
+          <a
+            href="https://www.google.com/maps/@41.3158161,69.2758219,15z"
+            target="blank"
+            class="footer__locations-location"
+          >
             <img
               src="./icons/icon-marker.svg"
               alt="marker icon"
@@ -287,7 +297,11 @@
               (entrance from the store)
             </h4>
           </a>
-          <a href="#" class="footer__locations-location">
+          <a
+            href="https://www.google.com/maps/@41.3158161,69.2758219,15z"
+            target="blank"
+            class="footer__locations-location"
+          >
             <img
               src="./icons/icon-marker.svg"
               alt="marker icon"
@@ -302,5 +316,35 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal hide">
+      <div class="modal__backdrop"></div>
+      <div class="modal__window">
+        <button class="btn-round modal__close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__image">
+          <img src="./img/pets-jennifer.png" alt="puppy image" />
+        </div>
+        <div class="modal__content">
+          <h3 class="modal__heading">Jennifer</h3>
+          <h4 class="modal__subheading">Dog - Labrador</h4>
+          <h5 class="modal__text">
+            Jennifer is a sweet 2 months old Labrador that is patiently waiting
+            to find a new forever home. This girl really enjoys being able to go
+            outside to run and play, but won't hesitate to play up a storm in
+            the house if she has all of her favorite toys.
+          </h5>
+          <ul class="modal__list">
+            <li class="modal__list-item"><strong>Age:</strong> 2 months</li>
+            <li class="modal__list-item">
+              <strong>Inoculations:</strong> none
+            </li>
+            <li class="modal__list-item"><strong>Diseases:</strong> none</li>
+            <li class="modal__list-item"><strong>Parasites:</strong> none</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
