@@ -285,6 +285,8 @@ a {
 
 .start-screen__btn {
   margin-top: 42px;
+  display: inline-block;
+  line-height: 52px;
 }
 
 .about {
@@ -344,7 +346,9 @@ a {
 }
 
 .pets__btn {
+  display: inline-block;
   margin: 60px auto 0;
+  line-height: 52px;
 }
 
 .help {

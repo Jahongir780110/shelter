@@ -165,5 +165,3 @@ modalClose.addEventListener("click", () => {
   modal.classList.add("hide");
   document.body.style.overflow = "visible";
 });
-
-changeSlider();
