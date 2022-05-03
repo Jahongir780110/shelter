@@ -174,7 +174,6 @@ a {
   justify-content: center;
   background-color: inherit;
   border-radius: 50%;
-  font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
   cursor: pointer;
@@ -420,6 +419,7 @@ a {
 }
 
 .donation__content-btn {
+  width: max-content;
   display: flex;
   height: auto;
   align-items: center;
