@@ -175,6 +175,7 @@ a {
   justify-content: center;
   background-color: inherit;
   border-radius: 50%;
+  font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.06em;
   cursor: pointer;
@@ -188,6 +189,11 @@ a {
   border-color: #fddcc4;
 }
 
+.btn-round.active {
+  background-color: #f1cdb3 !important;
+  border-color: #f1cdb3 !important;
+}
+
 .btn-round:disabled {
   pointer-events: none;
   color: #cdcdcd;
@@ -199,6 +205,12 @@ a {
   position: absolute;
   top: 60px;
   left: 0;
+}
+
+.header.header-pets {
+  position: static;
+  background-color: #fff;
+  padding: 30px 0;
 }
 
 .header .container {
@@ -215,6 +227,10 @@ a {
   letter-spacing: 0.06em;
 }
 
+.header-pets .header__logo-title {
+  color: #545454;
+}
+
 .header__logo-subtitle {
   font-size: 13px;
   margin-top: 10px;
@@ -222,6 +238,10 @@ a {
   letter-spacing: 0.1em;
   padding-left: 4px;
   line-height: 15px;
+}
+
+.header-pets .header__logo-subtitle {
+  color: #292929;
 }
 
 .header__navbar-list {
@@ -244,8 +264,16 @@ a {
   transition: 0.3s;
 }
 
+.header-pets .header__navbar-item a {
+  color: #545454;
+}
+
 .header__navbar-item:hover a {
   color: #fafafa;
+}
+
+.header-pets .header__navbar-item:hover a {
+  color: #292929;
 }
 
 .header__navbar-item.active {
@@ -254,6 +282,10 @@ a {
 
 .header__navbar-item.active a {
   color: #fafafa;
+}
+
+.header-pets .header__navbar-item.active a {
+  color: #292929;
 }
 
 .start-screen {
@@ -349,6 +381,24 @@ a {
   display: inline-block;
   margin: 60px auto 0;
   line-height: 52px;
+}
+
+.pets__cards {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+}
+
+.pets__cards > .card {
+  margin-bottom: 30px;
+}
+
+.pets__navigation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
 }
 
 .help {
