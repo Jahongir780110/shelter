@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our pets</title>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -179,5 +186,39 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal hide">
+      <div class="modal__backdrop"></div>
+      <div class="modal__window">
+        <button class="btn-round modal__close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal__image">
+          <img src="./img/pets-katrine.png" alt="cat image" />
+        </div>
+        <div class="modal__content">
+          <h3 class="modal__heading">Sample heading</h3>
+          <h4 class="modal__subheading">Sample subheading</h4>
+          <h5 class="modal__text">Sample text</h5>
+          <ul class="modal__list">
+            <li class="modal__list-item">
+              <strong>Age:</strong> <span class="pet-age"></span>
+            </li>
+            <li class="modal__list-item">
+              <strong>Inoculations:</strong>
+              <span class="pet-inoculations"></span>
+            </li>
+            <li class="modal__list-item">
+              <strong>Diseases:</strong> <span class="pet-diseases"></span>
+            </li>
+            <li class="modal__list-item">
+              <strong>Parasites:</strong> <span class="pet-parasites"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/pets.js"></script>
   </body>
 </html>
