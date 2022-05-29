@@ -19,7 +19,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <a class="header__logo" href="./">
+        <a class="header__logo" href="./" data-main="true">
           <h1 class="header__logo-title">Cozy House</h1>
           <p class="header__logo-subtitle">Shelter for pets in Boston</p>
         </a>
@@ -40,6 +40,42 @@
             </li>
           </ul>
         </nav>
+
+        <span class="header__btn" data-main="true">
+          <img src="./img/burger.png" alt="burger icon" width="30" />
+        </span>
+
+        <div class="header__sidebar hidden">
+          <div class="sidebar__header">
+            <a class="header__logo" href="./">
+              <h1 class="header__logo-title">Cozy House</h1>
+              <p class="header__logo-subtitle">Shelter for pets in Boston</p>
+            </a>
+
+            <span class="header__btn" data-sidebar="true">
+              <img src="./img/burger.png" alt="burger icon" width="30" />
+            </span>
+          </div>
+
+          <nav class="header__navbar header__sidebar-navbar">
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item active">
+                <a class="nav-link" href="./">About the shelter</a>
+              </li>
+              <li class="header__navbar-item">
+                <a class="nav-link" href="./pets.html" target="blank"
+                  >Our pets</a
+                >
+              </li>
+              <li class="header__navbar-item">
+                <a class="sitenav-link" href="#help">Help the shelter</a>
+              </li>
+              <li class="header__navbar-item">
+                <a class="sitenav-link" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -126,6 +162,14 @@
             <button class="btn-round pets__slider-btnRight">
               <i class="fa-solid fa-arrow-right-long"></i>
             </button>
+            <div class="slider-btns__mobile">
+              <button class="btn-round pets__slider-btnLeft">
+                <i class="fa-solid fa-arrow-left-long"></i>
+              </button>
+              <button class="btn-round pets__slider-btnRight">
+                <i class="fa-solid fa-arrow-right-long"></i>
+              </button>
+            </div>
           </div>
           <a href="./pets.html" target="blank" class="btn pets__btn">
             Get to know the rest
@@ -237,7 +281,7 @@
               />
               <h4 class="credit-card-number">8380 2880 8028 8791 7135</h4>
             </a>
-            <p class="doncation__content-info">
+            <p class="donation__content-info">
               Legal information and lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
               ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
@@ -252,8 +296,9 @@
       <div class="container">
         <div class="footer__contacts">
           <h3 class="footer__contacts-title">
-            For questions <br />
-            and suggestions
+            For questions <br class="non-mobile-br" />
+            and <br class="mobile-br" />
+            suggestions
           </h3>
           <a href="mailto:email@shelter.com" class="footer__contacts-contact">
             <img
@@ -275,8 +320,9 @@
 
         <div id="contacts" class="footer__locations">
           <h3 class="footer__locations-title">
-            We are waiting <br />
-            for your visit
+            We are waiting <br class="non-mobile-br" />
+            for <br class="mobile-br" />
+            your visit
           </h3>
           <a
             href="https://www.google.com/maps/@41.3158161,69.2758219,15z"

@@ -102,8 +102,13 @@ const modal = document.querySelector(".modal");
 const backdrop = document.querySelector(".modal__backdrop");
 const modalClose = document.querySelector(".modal__close");
 const sliderItems = document.querySelectorAll(".pets__slider .card");
-const sliderBtnLeft = document.querySelector(".pets__slider-btnLeft");
-const sliderBtnRight = document.querySelector(".pets__slider-btnRight");
+const sliderBtnsLeft = document.querySelectorAll(".pets__slider-btnLeft");
+const sliderBtnsRight = document.querySelectorAll(".pets__slider-btnRight");
+const menuBtnMain = document.querySelector(".header__btn[data-main]");
+const menuBtnSidebar = document.querySelector(".header__btn[data-sidebar]");
+const headerSidebar = document.querySelector(".header__sidebar");
+const headerLogo = document.querySelector(".header__logo[data-main]");
+const sidebarNavItems = document.querySelectorAll(".header__sidebar-navbar li");
 
 function changeSlider() {
   sliderItems.forEach((sliderItem, index) => {
@@ -141,19 +146,23 @@ sliderItems.forEach((sliderItem, index) => {
   });
 });
 
-sliderBtnLeft.addEventListener("click", () => {
-  const x = sliderStart - 3;
-  if (x < 0) {
-    sliderStart = petsData.length + x;
-  } else {
-    sliderStart = x;
-  }
-  changeSlider();
+sliderBtnsLeft.forEach((sliderBtnLeft) => {
+  sliderBtnLeft.addEventListener("click", () => {
+    const x = sliderStart - 1;
+    if (x < 0) {
+      sliderStart = petsData.length + x;
+    } else {
+      sliderStart = x;
+    }
+    changeSlider();
+  });
 });
 
-sliderBtnRight.addEventListener("click", () => {
-  sliderStart += 3;
-  changeSlider();
+sliderBtnsRight.forEach((sliderBtnRight) => {
+  sliderBtnRight.addEventListener("click", () => {
+    sliderStart += 1;
+    changeSlider();
+  });
 });
 
 backdrop.addEventListener("click", () => {
@@ -164,4 +173,21 @@ backdrop.addEventListener("click", () => {
 modalClose.addEventListener("click", () => {
   modal.classList.add("hide");
   document.body.style.overflow = "visible";
+});
+
+menuBtnMain.addEventListener("click", () => {
+  headerSidebar.classList.remove("hidden");
+  headerLogo.style.visibility = "hidden";
+});
+
+menuBtnSidebar.addEventListener("click", () => {
+  headerSidebar.classList.add("hidden");
+  headerLogo.style.visibility = "visible";
+});
+
+sidebarNavItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    headerSidebar.classList.add("hidden");
+    headerLogo.style.visibility = "visible";
+  });
 });

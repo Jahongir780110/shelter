@@ -103,6 +103,12 @@ const modalClose = document.querySelector(".modal__close");
 
 const cardItems = document.querySelectorAll(".pets__cards .card");
 
+const menuBtnMain = document.querySelector(".header__btn[data-main]");
+const menuBtnSidebar = document.querySelector(".header__btn[data-sidebar]");
+const headerSidebar = document.querySelector(".header__sidebar");
+const headerLogo = document.querySelector(".header__logo[data-main]");
+const sidebarNavItems = document.querySelectorAll(".header__sidebar-navbar li");
+
 cardItems.forEach((cardItem, index) => {
   cardItem.addEventListener("click", () => {
     const id = index;
@@ -133,4 +139,21 @@ backdrop.addEventListener("click", () => {
 modalClose.addEventListener("click", () => {
   modal.classList.add("hide");
   document.body.style.overflow = "visible";
+});
+
+menuBtnMain.addEventListener("click", () => {
+  headerSidebar.classList.remove("hidden");
+  headerLogo.style.visibility = "hidden";
+});
+
+menuBtnSidebar.addEventListener("click", () => {
+  headerSidebar.classList.add("hidden");
+  headerLogo.style.visibility = "visible";
+});
+
+sidebarNavItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    headerSidebar.classList.add("hidden");
+    headerLogo.style.visibility = "visible";
+  });
 });

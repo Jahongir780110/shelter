@@ -19,7 +19,7 @@
   <body>
     <header class="header header-pets">
       <div class="container">
-        <a class="header__logo" href="./">
+        <a class="header__logo" href="./" data-main="true">
           <h1 class="header__logo-title">Cozy House</h1>
           <p class="header__logo-subtitle">Shelter for pets in Boston</p>
         </a>
@@ -40,6 +40,42 @@
             </li>
           </ul>
         </nav>
+
+        <span class="header__btn" data-main="true">
+          <img src="./img/burger-black.png" alt="burger icon" width="30" />
+        </span>
+
+        <div class="header__sidebar hidden">
+          <div class="sidebar__header">
+            <a class="header__logo" href="./">
+              <h1 class="header__logo-title">Cozy House</h1>
+              <p class="header__logo-subtitle">Shelter for pets in Boston</p>
+            </a>
+
+            <span class="header__btn" data-sidebar="true">
+              <img src="./img/burger.png" alt="burger icon" width="30" />
+            </span>
+          </div>
+
+          <nav class="header__navbar header__sidebar-navbar">
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item">
+                <a class="nav-link" href="./">About the shelter</a>
+              </li>
+              <li class="header__navbar-item active">
+                <a class="nav-link" href="./pets.html" target="blank"
+                  >Our pets</a
+                >
+              </li>
+              <li class="header__navbar-item">
+                <a class="sitenav-link" href="#help">Help the shelter</a>
+              </li>
+              <li class="header__navbar-item">
+                <a class="sitenav-link" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
