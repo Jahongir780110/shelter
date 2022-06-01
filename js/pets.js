@@ -1,3 +1,46 @@
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array.slice(8 - petsPerPage);
+}
+
+function render() {
+  const petsCards = document.querySelectorAll(".pets__cards .card");
+  for (let i = 0; i < petsCards.length; i++) {
+    const card = petsCards[i];
+    card
+      .querySelector(".card-img img")
+      .setAttribute("src", pages[page - 1][i].imgUrl);
+    card
+      .querySelector(".card-img img")
+      .setAttribute("alt", pages[page - 1][i].alt);
+    card.querySelector(".card-title").innerText = pages[page - 1][i].name;
+  }
+  if (page === 1) {
+    leftLong.setAttribute("disabled", "disabled");
+    left.setAttribute("disabled", "disabled");
+    rightLong.removeAttribute("disabled");
+    right.removeAttribute("disabled");
+  } else if (page === 48 / petsPerPage) {
+    rightLong.setAttribute("disabled", "disabled");
+    right.setAttribute("disabled", "disabled");
+    leftLong.removeAttribute("disabled");
+    left.removeAttribute("disabled");
+  } else {
+    leftLong.removeAttribute("disabled");
+    left.removeAttribute("disabled");
+    rightLong.removeAttribute("disabled");
+    right.removeAttribute("disabled");
+  }
+  middle.innerText = page;
+}
+
+let page = 1;
+let petsPerPage = 8;
 const petsData = [
   {
     id: "1",
@@ -96,6 +139,7 @@ const petsData = [
     alt: "cat image",
   },
 ];
+const pages = [petsData.slice(0, petsPerPage)];
 
 const modal = document.querySelector(".modal");
 const backdrop = document.querySelector(".modal__backdrop");
@@ -109,10 +153,37 @@ const headerSidebar = document.querySelector(".header__sidebar");
 const headerLogo = document.querySelector(".header__logo[data-main]");
 const sidebarNavItems = document.querySelectorAll(".header__sidebar-navbar li");
 
+const paginationButtons = document.querySelectorAll(".pets__navigation button");
+const leftLong = paginationButtons[0];
+const left = paginationButtons[1];
+const middle = paginationButtons[2];
+const right = paginationButtons[3];
+const rightLong = paginationButtons[4];
+const width = window.innerWidth;
+
+if (width < 768) {
+  petsPerPage = 3;
+  const removingCards = document.querySelectorAll(".card.mobile");
+  removingCards.forEach((card) => {
+    card.remove();
+  });
+} else if (width < 1280) {
+  petsPerPage = 6;
+  const removingCards = document.querySelectorAll(".card.tablet");
+  removingCards.forEach((card) => {
+    card.remove();
+  });
+}
+
+for (let i = 0; i < 48 / petsPerPage; i++) {
+  const shuffledArray = shuffleArray([...petsData]);
+  pages.push(shuffledArray);
+}
+
 cardItems.forEach((cardItem, index) => {
   cardItem.addEventListener("click", () => {
     const id = index;
-    const petData = petsData[id];
+    const petData = pages[page - 1][id];
 
     modal.querySelector(".modal__heading").innerText = petData.name;
     modal.querySelector(".modal__subheading").innerText = petData.type;
@@ -156,4 +227,34 @@ sidebarNavItems.forEach((item) => {
     headerSidebar.classList.add("hidden");
     headerLogo.style.visibility = "visible";
   });
+});
+
+headerSidebar.querySelector(".backdrop").addEventListener("click", () => {
+  headerSidebar.classList.add("hidden");
+  headerLogo.style.visibility = "visible";
+  document.body.style.overflow = "visible";
+});
+
+right.addEventListener("click", () => {
+  if (page < pages.length) {
+    page++;
+    render();
+  }
+});
+
+left.addEventListener("click", () => {
+  if (page > 1) {
+    page--;
+    render();
+  }
+});
+
+leftLong.addEventListener("click", () => {
+  page = 1;
+  render();
+});
+
+rightLong.addEventListener("click", () => {
+  page = 48 / petsPerPage;
+  render();
 });

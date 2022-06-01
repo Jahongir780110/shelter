@@ -303,10 +303,25 @@ a {
   top: 0;
   right: 0;
   transition: 0.3s;
+  z-index: 2;
 }
 
 .header__sidebar.hidden {
   right: -320px;
+}
+
+.header__sidebar.hidden .backdrop {
+  display: none;
+}
+
+.header__sidebar .backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .header__sidebar .sidebar__header {
@@ -972,6 +987,11 @@ a {
   left: 0;
   background: rgba(41, 41, 41, 0.6);
   z-index: 1;
+}
+
+.modal__backdrop:hover ~ .modal__window .modal__close {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
 }
 
 .modal__window {

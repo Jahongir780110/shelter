@@ -148,7 +148,7 @@ sliderItems.forEach((sliderItem, index) => {
 
 sliderBtnsLeft.forEach((sliderBtnLeft) => {
   sliderBtnLeft.addEventListener("click", () => {
-    const x = sliderStart - 1;
+    const x = sliderStart - 3;
     if (x < 0) {
       sliderStart = petsData.length + x;
     } else {
@@ -160,7 +160,7 @@ sliderBtnsLeft.forEach((sliderBtnLeft) => {
 
 sliderBtnsRight.forEach((sliderBtnRight) => {
   sliderBtnRight.addEventListener("click", () => {
-    sliderStart += 1;
+    sliderStart += 3;
     changeSlider();
   });
 });
@@ -178,16 +178,25 @@ modalClose.addEventListener("click", () => {
 menuBtnMain.addEventListener("click", () => {
   headerSidebar.classList.remove("hidden");
   headerLogo.style.visibility = "hidden";
+  document.body.style.overflow = "hidden";
 });
 
 menuBtnSidebar.addEventListener("click", () => {
   headerSidebar.classList.add("hidden");
   headerLogo.style.visibility = "visible";
+  document.body.style.overflow = "visible";
 });
 
 sidebarNavItems.forEach((item) => {
   item.addEventListener("click", () => {
     headerSidebar.classList.add("hidden");
     headerLogo.style.visibility = "visible";
+    document.body.style.overflow = "visible";
   });
+});
+
+headerSidebar.querySelector(".backdrop").addEventListener("click", () => {
+  headerSidebar.classList.add("hidden");
+  headerLogo.style.visibility = "visible";
+  document.body.style.overflow = "visible";
 });
