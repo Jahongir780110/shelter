@@ -41,6 +41,7 @@ function render() {
 
 let page = 1;
 let petsPerPage = 8;
+let moda = "desktop";
 const petsData = [
   {
     id: "1",
@@ -159,6 +160,7 @@ const left = paginationButtons[1];
 const middle = paginationButtons[2];
 const right = paginationButtons[3];
 const rightLong = paginationButtons[4];
+const oldWidth = window.innerWidth;
 const width = window.innerWidth;
 
 if (width < 768) {
@@ -257,4 +259,17 @@ leftLong.addEventListener("click", () => {
 rightLong.addEventListener("click", () => {
   page = 48 / petsPerPage;
   render();
+});
+
+window.addEventListener("resize", () => {
+  const width = window.innerWidth;
+  if (oldWidth >= 1200 && width < 1200 && width >= 768) {
+    document.location.reload();
+  } else if (oldWidth >= 768 && width < 768 && width >= 320) {
+    document.location.reload();
+  } else if (oldWidth < 768 && width >= 768 && width < 1200) {
+    document.location.reload();
+  } else if (oldWidth >= 768 && oldWidth < 1200 && width >= 1200) {
+    document.location.reload();
+  }
 });
