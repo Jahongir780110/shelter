@@ -263,13 +263,23 @@ rightLong.addEventListener("click", () => {
 
 window.addEventListener("resize", () => {
   const width = window.innerWidth;
-  if (oldWidth >= 1200 && width < 1200 && width >= 768) {
+  if (oldWidth >= 1280 && width < 1280 && width >= 768) {
     document.location.reload();
-  } else if (oldWidth >= 768 && width < 768 && width >= 320) {
+  } else if (
+    oldWidth >= 768 &&
+    oldWidth < 1280 &&
+    width < 768 &&
+    width >= 320
+  ) {
     document.location.reload();
-  } else if (oldWidth < 768 && width >= 768 && width < 1200) {
+  } else if (
+    oldWidth < 768 &&
+    oldWidth >= 320 &&
+    width >= 768 &&
+    width < 1280
+  ) {
     document.location.reload();
-  } else if (oldWidth >= 768 && oldWidth < 1200 && width >= 1200) {
+  } else if (oldWidth >= 768 && oldWidth < 1280 && width >= 1280) {
     document.location.reload();
   }
 });
